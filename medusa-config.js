@@ -37,10 +37,10 @@ const plugins = [
   `medusa-fulfillment-manual`,
   `medusa-payment-manual`,
   {
-    resolve: `@medusa-payment-stripe`,
+    resolve: `medusa-payment-stripe`,
     options: {
-      api_key: process.env.STRIP_API_KEY,
-    }
+      api_key: process.env.STRIPE_API_KEY,
+    },
   },
   {
     resolve: `@medusajs/file-local`,
@@ -64,14 +64,14 @@ const modules = {
   eventBus: {
     resolve: "@medusajs/event-bus-redis",
     options: {
-      redisUrl: REDIS_URL
-    }
+      redisUrl: REDIS_URL,
+    },
   },
   cacheService: {
     resolve: "@medusajs/cache-redis",
     options: {
-      redisUrl: REDIS_URL
-    }
+      redisUrl: REDIS_URL,
+    },
   },
 };
 
@@ -83,7 +83,7 @@ const projectConfig = {
   database_url: DATABASE_URL,
   admin_cors: ADMIN_CORS,
   // Uncomment the following lines to enable REDIS
-  // redis_url: REDIS_URL
+  redis_url: REDIS_URL,
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
