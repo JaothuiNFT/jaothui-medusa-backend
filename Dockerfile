@@ -3,7 +3,7 @@ WORKDIR /app/medusa
 
 COPY package.json .
 COPY develop.sh .
-COPY .env .
+# COPY .env .
 
 RUN npm config set fetch-retry-maxtimeout 1000000
 
