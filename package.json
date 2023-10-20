@@ -13,9 +13,9 @@
     "medusa"
   ],
   "scripts": {
-    "clean": "./node_modules/.bin/rimraf dist",
-    "build": "NODE_ENV=development yarn build:server",
-    "build:server": "tsc -p tsconfig.server.json",
+    "clean": "cross-env ./node_modules/.bin/rimraf dist",
+    "build": "cross-env yarn build:server",
+    "build:server": "cross-env npm run clean && tsc -p tsconfig.server.json",
     "build:admin": "cross-env medusa-admin build",
     "watch": "cross-env tsc --watch",
     "test": "cross-env jest",
