@@ -1,4 +1,4 @@
-FROM node:18.17.0-alpin
+FROM node:18.17.0-alpine
 WORKDIR /app/medusa
 
 COPY package.json .
